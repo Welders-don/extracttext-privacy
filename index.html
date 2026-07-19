@@ -30,15 +30,19 @@
   </head>
   <body>
     <h1>Privacy Policy</h1>
-    <p class="updated">Extract Text from Image · Last updated: June 9, 2026</p>
+    <p class="updated">Extract Text from Image · Last updated: July 19, 2026</p>
 
     <div class="highlight">
-      <strong>TL;DR:</strong> This extension does not collect, store, transmit, or share any personal data.
-      All OCR processing happens locally on your device. Nothing leaves your browser.
+      <strong>TL;DR:</strong> All OCR processing happens locally on your device — your images, screenshots and recognized text never leave your browser.
+      The extension sends only minimal anonymous usage statistics (a random ID, extension version and interface language) so we know how many people use it.
     </div>
 
     <h2>What data we collect</h2>
-    <p><strong>None.</strong> We do not collect any personally identifiable information, browsing history, page content, screenshots, recognized text, or analytics.</p>
+    <p>We do <strong>not</strong> collect any personally identifiable information, browsing history, page content, screenshots, images, or recognized text.</p>
+    <p>We collect <strong>anonymous usage statistics</strong>: when the extension is installed, used (one "active today" ping per day) or uninstalled, it sends a small event to our server containing a random identifier (a UUID generated inside the extension, not linked to you or your Google account), the extension version, and your browser interface language. Our server does not store IP addresses or user-agent strings.</p>
+
+    <h2>Optional feedback</h2>
+    <p>If you choose to rate the extension and leave a comment, or select an uninstall reason on the page shown after removal, the text you enter is sent to our server together with the same random identifier and extension version. This is entirely optional and contains no email address or account information.</p>
 
     <h2>How OCR works</h2>
     <p>When you click the extension icon and select a region of a webpage, the extension captures a screenshot of that region using Chrome's built-in API. The screenshot is processed entirely within your browser using a local PaddleOCR machine learning model (WebAssembly). The recognized text appears in a panel inside your browser tab. No image, text, or metadata is sent to any external server.</p>
@@ -55,18 +59,19 @@
 
     <h2>Permissions explained</h2>
     <ul>
-      <li><strong>activeTab, tabs</strong> — to capture a screenshot of the page region you select</li>
+      <li><strong>activeTab</strong> — to capture a screenshot of the page region you select</li>
       <li><strong>scripting</strong> — to inject the selection UI into the current page when you click the icon</li>
       <li><strong>offscreen</strong> — required to run the OCR WebAssembly engine in a sandboxed background context</li>
       <li><strong>storage</strong> — to remember your language preference between sessions</li>
+      <li><strong>alarms</strong> — to schedule the once-a-day anonymous "active today" ping</li>
       <li><strong>host_permissions (all_urls)</strong> — to allow text extraction from any webpage you choose to use the extension on. The extension only activates when you explicitly click the icon</li>
     </ul>
 
     <h2>Third-party services</h2>
-    <p>The extension does not use any third-party analytics, advertising networks, tracking pixels, or external APIs. The only external request is the one-time download of OCR models from GitHub (described above).</p>
+    <p>The extension does not use any third-party analytics, advertising networks, or tracking pixels. Anonymous usage statistics and optional feedback are sent to our own self-hosted server (devexthub.com) and are never shared with or sold to anyone. The only other external request is the one-time download of OCR models from GitHub (described above).</p>
 
     <h2>Data deletion</h2>
-    <p>To remove all data associated with this extension, simply uninstall it from Chrome. This clears all stored preferences and cached model files.</p>
+    <p>To remove all data associated with this extension, simply uninstall it from Chrome. This clears all stored preferences and cached model files. Because usage statistics are tied only to a random identifier, they cannot be linked back to you; if you want the events for your random ID deleted from our server, contact us via the Chrome Web Store listing.</p>
 
     <h2>Changes to this policy</h2>
     <p>If we change this policy in the future, the "Last updated" date above will be modified. Material changes will be communicated via the Chrome Web Store listing.</p>
